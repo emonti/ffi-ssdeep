@@ -13,6 +13,13 @@ See the ssdeep homepage for more information:
 * ssdeep's libfuzzy - http://ssdeep.sourceforge.net
   The version of ssdeep known to work with ffi-ssdeep is 2.5.
 
+== Installation
+
+First ensure you have installed ffi-ssdeep and that libfuzzy is in your libpath.
+Then, just run 
+
+   (sudo)? gem install ffi-ssdeep
+
 == License
 
 See LICENSE.txt
