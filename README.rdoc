@@ -1,0 +1,20 @@
+= ffi-ssdeep
+
+Ruby FFI bindings for the ssdeep 'libfuzzy' library api. This API lets you do 
+fuzzy hash comparisons between files and arbitrary string buffers. Fuzzy 
+hashes are also known as context triggered piecewise hashes (CTPH).
+
+See the ssdeep homepage for more information:
+  http://ssdeep.sourceforge.net
+
+== Requirements
+
+* ffi >= 0.6.0
+* ssdeep's libfuzzy - http://ssdeep.sourceforge.net
+  The version of ssdeep known to work with ffi-ssdeep is 2.5.
+
+== License
+
+See LICENSE.txt
+
+
