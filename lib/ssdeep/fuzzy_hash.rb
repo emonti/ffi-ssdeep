@@ -10,6 +10,7 @@ module Ssdeep
       super(FUZZY_MAX_RESULT)
     end
 
+    # returns the computed fuzzy hash as a string
     def to_s
       self.read_string()
     end
@@ -17,16 +18,6 @@ module Ssdeep
     # implements a _dump method for Marshal
     def _dump(depth)
       self.to_s
-    end
-
-    # implements a _load method for Marshal
-    def self._load(raw)
-      new().write_string( 
-        if raw.size < FUZZY_MAX_RESULT 
-          raw + "\x00" 
-        else 
-          raw[0,FUZZY_MAX_RESULT]
-        end )
     end
 
     # @return [Integer]
@@ -49,6 +40,25 @@ module Ssdeep
       end
     end
 
+    # implements a _load method for Marshal
+    def self._load(raw)
+      from_hash(raw)
+    end
+
+    # Restores a fuzzy hash that has already been generated and supplied
+    # as a string as a instance of a FuzzyHash object.
+    def self.from_hash(raw)
+      fh = new()
+      fh.write_string( 
+        if raw.size < FUZZY_MAX_RESULT 
+          raw + "\x00" 
+        else 
+          raw[0,FUZZY_MAX_RESULT]
+        end )
+      return fh
+    end
+
+    # Creates a new fuzzy hash from a string buffer.
     def self.from_string(buf)
       fh = new()
       p = FFI::MemoryPointer.new(buf.size)
@@ -62,6 +72,7 @@ module Ssdeep
       end
     end
 
+    # Creates a new fuzzy hash from the contents of 'filename'
     def self.from_file(filename)
       fh = new()
       ret = Ssdeep.fuzzy_hash_filename(filename, fh)
