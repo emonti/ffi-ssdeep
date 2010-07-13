@@ -40,8 +40,12 @@ module Ssdeep
       unless other.is_a?(FuzzyHash)
         raise(TypeError, "a FuzzyHash can only be compared to another FuzzyHash")
       end
-      if (ret=Ssdeep.fuzzy_compare(self, other)) > -1
+      if self.to_s == other.to_s
+        return 100
+      elsif (ret=Ssdeep.fuzzy_compare(self, other)) > -1
         return ret
+      else
+        raise(StandardError, "unknown fuzzy hash comparison error")
       end
     end
 

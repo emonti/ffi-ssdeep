@@ -41,9 +41,9 @@ describe Ssdeep do
   end
 
   it "should have a hash_file method that generates a fuzzy hash from a filename" do
-    fh = Ssdeep.hash_file(sample_file("giop.gemspec"))
+    fh = Ssdeep.hash_file(sample_file("ssdeep.gemspec"))
     fh.should be_kind_of Ssdeep::FuzzyHash
-    fh.to_s.should == "24:ZkR6abenafgr2plXeh/TzKwfgrUERNvnDEx/7/i/vA:WbenDr2M/TzsrUQvnDEh/i/I"
+    fh.to_s.should == "24:ZkR5abenafgr2ph4glPlXeh/Tzj1wfgrUERNvnNyx/7/i/vA:fbenDr2ph9S/TzjvrUQvnoh/i/I"
   end
 end
 
