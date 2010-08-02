@@ -1,5 +1,6 @@
 = ffi-ssdeep
 * Homepage: http://github.com/SpiderLabsResearch/ffi-ssdeep
+* RDoc: http://rdoc.info/projects/SpiderLabsResearch/ffi-ssdeep/
 * Bugs/Issues: http://github.com/SpiderLabsResearch/ffi-ssdeep/issues
 * Author: emonti at trustwave.com
 
@@ -9,7 +10,7 @@ fuzzy hash comparisons between files and arbitrary string buffers. Fuzzy
 hashes are also known as context triggered piecewise hashes (CTPH).
 
 See the ssdeep homepage for more information:
-  http://ssdeep.sourceforge.net
+* http://ssdeep.sourceforge.net
 
 == Requirements
 

@@ -25,7 +25,7 @@ module Ssdeep
     #   two signatures. A match score of zero indicates the sigantures did 
     #   not match. 
     #
-    # @return [
+    # @raise [StandardError]
     #   When an error occurs, such as if one of the inputs is NULL.
     def compare(other)
       unless other.is_a?(FuzzyHash)
