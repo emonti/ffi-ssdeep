@@ -10,16 +10,23 @@ module Ssdeep
       super(FUZZY_MAX_RESULT)
     end
 
-    # returns the computed fuzzy hash as a string
+    #
+    # @return [String] Returns the computed fuzzy hash as a string
+    #
     def to_s
       self.read_string()
     end
 
-    # implements a _dump method for Marshal
+    # Implements a _dump method for Marshal
     def _dump(depth)
       self.to_s
     end
 
+    # Compares one hash against another.
+    #
+    # @param [FuzzyHash] other
+    #   The other fuzzy hash object to compare to.
+    #
     # @return [Integer]
     #   Returns a value from zero to 100 indicating the match score of the 
     #   two signatures. A match score of zero indicates the sigantures did 
@@ -27,6 +34,10 @@ module Ssdeep
     #
     # @raise [StandardError]
     #   When an error occurs, such as if one of the inputs is NULL.
+    #
+    # @raise [TypeError]
+    #   If the 'other' parameter is not a FuzzyHash instance.
+    #
     def compare(other)
       unless other.is_a?(FuzzyHash)
         raise(TypeError, "a FuzzyHash can only be compared to another FuzzyHash")
