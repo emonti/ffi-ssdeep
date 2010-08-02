@@ -12,7 +12,7 @@ PROJ.name = 'ffi-ssdeep'
 PROJ.authors = 'Eric Monti'
 PROJ.email = 'emonti@trustwave.com'
 PROJ.description = 'FFI bindings for the ssdeep library "libfuzzy" for fuzzy hash comparisons'
-PROJ.url = nil
+PROJ.url = 'http://github.com/SpiderLabsResearch/ffi-ssdeep'
 PROJ.version = File.open("version.txt","r"){|f| f.readline.chomp}
 PROJ.readme_file = 'README.rdoc'
 
