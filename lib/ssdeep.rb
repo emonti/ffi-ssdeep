@@ -58,7 +58,13 @@ module Ssdeep
     FuzzyHash.from_file(fname)
   end
 
+  def self.load_hash(h)
+    FuzzyHash.from_hash(h)
+  end
+
   def self.compare_hashes(h1, h2)
+    h1 = load_hash(h1) if h1.is_a?(String)
+    h2 = load_hash(h2) if h2.is_a?(String)
     h1.compare(h2)
   end
 
