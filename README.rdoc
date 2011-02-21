@@ -1,32 +1,4 @@
-= ffi-ssdeep
-* Homepage: http://github.com/SpiderLabsResearch/ffi-ssdeep
-* RDoc: http://rdoc.info/projects/SpiderLabsResearch/ffi-ssdeep/
-* Bugs/Issues: http://github.com/SpiderLabsResearch/ffi-ssdeep/issues
-* Author: emonti at trustwave.com
+This project has been renamed to 'russdeep' (see github.com/emonti/russdeep).
 
-== Synopsis
-Ruby FFI bindings for the ssdeep 'libfuzzy' library api. This API lets you do 
-fuzzy hash comparisons between files and arbitrary string buffers. Fuzzy 
-hashes are also known as context triggered piecewise hashes (CTPH).
-
-See the ssdeep homepage for more information:
-* http://ssdeep.sourceforge.net
-
-== Requirements
-
-* ffi >= 0.6.0
-* ssdeep's libfuzzy - http://ssdeep.sourceforge.net
-  The version of ssdeep known to work with ffi-ssdeep is 2.5.
-
-== Installation
-
-First ensure you have installed the ssdeep package and that libfuzzy is in your libpath.
-Then, just run 
-
-   (sudo)? gem install ffi-ssdeep
-
-== License
-
-See LICENSE.txt
-
+It no longer comprises only FFI bindings.
 
